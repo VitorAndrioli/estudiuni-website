@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Transdmin Light</title>
+	
+	<!-- CSS -->
+	<%= stylesheet_link_tag "transdmin/transdmin", :media => "all" %>
+	
+	<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="style/css/ie6.css" /><![endif]-->
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="style/css/ie7.css" /><![endif]-->
+	
+	<!-- JavaScripts-->
+	<%= javascript_include_tag "admin/admin" %>
+	
+	<!-- metatags -->
+	<%= csrf_meta_tag %>
+	
+	<!-- additional data -->
+	<%= yield :head %>
+	
+</head>
+
+<body>
+	<div id="wrapper">
+    	<!-- h1 tag stays for the logo, you can use the a tag for linking the index page -->
+    	<br />
+    	<br />
+    	<br />
+    	<h1><a href="#"><span>Transdmin Light</span></a></h1>
+        <br />
+        <br />
+        <br />
+        <!-- You can name the links with lowercase, they will be transformed to uppercase by CSS, we prefered to name them with uppercase to have the same effect with disabled stylesheet -->
+        <ul id="mainNav">
+        	<li><a href="/admin/principal" class="<%= controller.controller_name == "principals" ? "active" : "" %>">Principal</a></li>
+        	<li><a href="/admin/artists" class="<%= controller.controller_name == "artists" ? "active" : "" %>">Artistas</a></li> <!-- Use the "active" class for the active menu item  -->
+        	<li><a href="/admin/works" class="<%= (controller.controller_name == "works" or controller.controller_name == "images") ? "active" : "" %>">Trabalhos</a></li>
+        	<li class="logout"><a href="/admin/admin/logout">LOGOUT</a></li>
+        </ul>
+        <!-- // #end mainNav -->
+        
+        <div id="containerHolder">
+			<div id="container">
+        		<div id="sidebar">
+                	<%= yield :sidebar %>
+                    <!-- // .sideNav -->
+                </div>    
+                <!-- // #sidebar -->
+                
+                <!-- h2 stays for breadcrumbs -->
+                <%= yield :breadcrumbs %>
+                
+                <div id="main">
+					<%= yield %>
+                </div>
+                <!-- // #main -->
+                
+                <div class="clear"></div>
+            </div>
+            <!-- // #container -->
+        </div>	
+        <!-- // #containerHolder -->
+        
+        <p id="footer">
+        	Theme <a href="https://github.com/zapnap/transdmin" target="_blank">Transdmin Light</a>, 
+        	by <a href="http://www.perspectived.com" target="_blank">Perspectived.com</a>
+        </p>
+    </div>
+    <!-- // #wrapper -->
+</body>
+</html>

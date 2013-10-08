@@ -1,0 +1,2 @@
+module Admin::JobImagesHelper
+end

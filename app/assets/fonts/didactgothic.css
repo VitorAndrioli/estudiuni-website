@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'DidactGothicMedium';
+    src: url('didactgothic.eot');
+    src: url('didactgothic.eot') format('embedded-opentype'),
+         url('didactgothic.woff') format('woff'),
+         url('didactgothic.ttf') format('truetype'),
+         url('didactgothic.svg#DidactGothicMedium') format('svg');
+}
