@@ -1,0 +1,9 @@
+<%= content_for :breadcrumbs do %>
+	<h2>
+		<%= link_to "Designers", admin_designers_path %>&raquo;
+		<a href="#" class="active">Editar designer</a>
+	</h2>
+<% end %>
+
+<% @submit_text = "Atualizar" %>
+<%= render "form" %>

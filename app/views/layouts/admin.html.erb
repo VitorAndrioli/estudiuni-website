@@ -35,10 +35,10 @@
         <% if session[:logged] %>
         	<!-- You can name the links with lowercase, they will be transformed to uppercase by CSS, we prefered to name them with uppercase to have the same effect with disabled stylesheet -->
 	        <ul id="mainNav">
-	        	<li><a href="/admin/principal" class="<%= controller.controller_name == "main" ? "active" : "" %>">Estudiuni</a></li>
-	        	<li><a href="/admin/artists" class="<%= controller.controller_name == "designers" ? "active" : "" %>">Designers</a></li> <!-- Use the "active" class for the active menu item  -->
-	        	<li><a href="/admin/works" class="<%= (controller.controller_name == "jobs" or controller.controller_name == "images") ? "active" : "" %>">Trabalhos</a></li>
-	        	<li><a href="/admin/artists" class="<%= controller.controller_name == "for_sale_items" ? "active" : "" %>">Lojinha</a></li>
+	        	<li><a href="/admin/main" class="<%= controller.controller_name == "main" ? "active" : "" %>">Estudiuni</a></li>
+	        	<li><a href="/admin/designers" class="<%= controller.controller_name == "designers" ? "active" : "" %>">Designers</a></li> <!-- Use the "active" class for the active menu item  -->
+	        	<li><a href="/admin/jobs" class="<%= (controller.controller_name == "jobs" or controller.controller_name == "images") ? "active" : "" %>">Trabalhos</a></li>
+	        	<li><a href="/admin/for_sale_items" class="<%= controller.controller_name == "for_sale_items" ? "active" : "" %>">Lojinha</a></li>
 	        	<li class="logout"><a href="/admin/admin/logout">LOGOUT</a></li>
 	        </ul>
 	        <!-- // #end mainNav -->

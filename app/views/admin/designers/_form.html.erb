@@ -1,0 +1,92 @@
+<%= form_for [:admin, @designer] do |f| %>
+
+	<% if @designer.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@designer.errors.count, "error") %> prohibited this work from being saved:</h2>
+			
+			<ul>
+				<% @designer.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<div class="field">
+		<%= f.label "Nome" %><br />
+		<%= f.text_field :name %>
+	</div>
+	
+	<div class="field">
+		<%= f.label "Sobrenome" %><br />
+		<%= f.text_field :surname %>
+	</div>
+	
+	<div class="field">
+		<%= f.label "Foto" %>
+		<%= f.file_field :image %>
+		<%= @designer.image.blank? ? "" : image_tag(@designer.image.thumb) %>
+	</div>
+	
+	<div class="field">
+		<%= f.label "Sobre" %><br />
+		<%= f.text_area :about, :class => "tinymce", :rows => 10, :cols => 80 %>
+	</div>
+	
+	<%= f.globalize_fields_for :en do |g| %>
+	<div class="field">
+		<%= g.label "Sobre (Inglês)" %><br />
+		<%= g.text_area :about, :class => "tinymce", :rows => 10, :cols => 80 %>
+	</div>
+	<% end %>
+	
+	<div class="field">
+		<%= f.label "Email" %><br />
+		<%= f.text_field :email %>
+	</div>
+	
+	<div class="field">
+		<%= f.label "Behance" %><br />
+		<%= f.text_field :behance %>
+	</div>
+	
+	<div class="field">
+		<%= f.label "Blog" %><br />
+		<%= f.text_field :blogger %>
+	</div>
+	
+	<div class="field">
+		<%= f.label "Facebook" %><br />
+		<%= f.text_field :facebook %>
+	</div>
+	
+	<div class="field">
+		<%= f.label "LinkedIn" %><br />
+		<%= f.text_field :linkedin %>
+	</div>
+	
+	<div class="field">
+		<%= f.label "Pinterest" %><br />
+		<%= f.text_field :pinterest %>
+	</div>
+	
+	<div class="field">
+		<%= f.label "Vimeo" %><br />
+		<%= f.text_field :vimeo %>
+	</div>
+	
+	<script type="text/javascript">
+		tinymce.init({
+		    mode: 'textareas',
+		    theme: 'advanced',
+		    plugins : "paste",
+		    theme_advanced_buttons3_add : "pastetext,pasteword,selectall",
+		    paste_auto_cleanup_on_paste : true
+		});
+	</script> 
+	
+	<div class="action">
+		<%= f.submit @submit_text %>
+	</div>
+	
+<% end %>

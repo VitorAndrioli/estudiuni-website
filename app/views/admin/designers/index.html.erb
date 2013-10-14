@@ -1,0 +1,30 @@
+<%= content_for :breadcrumbs do %>
+	<h2><a href="#" class="active">Designers</a></h2>
+<% end %>
+
+<%= link_to "Novo designer", new_admin_designer_path, :class => "button" %>
+
+
+<table class="admin_content">
+	<tr>
+		<th class="first">Nome</th>
+		<th>Foto</th>
+		<th class="last"></th>
+	</tr>
+	<% isOdd = false %>
+	<% @designers.each do |designer| %>
+		<tr class="<%= isOdd ? "odd" : "" %>">
+			<td class="first"><%= designer.name %></td>
+			<td><%= designer.image.thumb.blank? ? "" : image_tag(designer.image.thumb) %></td>
+			<td class="last">
+				<%= link_to "Editar", edit_admin_designer_path(designer.id) %>
+				<%= link_to "Deletar", admin_designer_path(designer.id), 
+		    			:method => :delete, data: { confirm: 'Você tem certeza de que deseja deletar este designer?' } %>
+			</td>
+		</tr>
+	<% isOdd = !isOdd %>
+	<% end %>
+</table>
+
+<%= link_to "Novo designer", new_admin_designer_path, :class => "button" %>
+	
