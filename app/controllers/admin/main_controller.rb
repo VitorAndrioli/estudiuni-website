@@ -16,7 +16,7 @@ class Admin::MainController < Admin::AdminController
   
   def update
     @main = Main.find( params[:id] )
-    @main.update_attributes( params[:principal] )
+    @main.update_attributes( params[:main] )
     
     respond_to do |format|
       format.html { redirect_to(:action => "index") }
