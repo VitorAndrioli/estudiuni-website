@@ -33,6 +33,6 @@ class Admin::AdminController < ApplicationController
 
   def redirect_to_stored
     session[:return_to]=nil
-    redirect_to(:controller => "artists", :action => "index")
+    redirect_to(:controller => "main", :action => "index")
   end
 end

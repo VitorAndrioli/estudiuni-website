@@ -9,7 +9,7 @@ class CreateJobs < ActiveRecord::Migration
 
       t.timestamps
     end
-    Job.creat_translation_table! :name => :string, :description => :text
+    Job.create_translation_table! :name => :string, :description => :text
   end
   
   def down

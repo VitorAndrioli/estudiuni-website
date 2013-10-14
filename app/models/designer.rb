@@ -10,4 +10,5 @@ class Designer < ActiveRecord::Base
   accepts_nested_attributes_for :translations
   
   has_and_belongs_to_many :jobs
+  has_many :for_sale_items
 end
