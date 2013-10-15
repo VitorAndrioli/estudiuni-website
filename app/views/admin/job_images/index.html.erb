@@ -1,0 +1,38 @@
+<%= content_for :sidebar do %>
+	<ul class="sideNav">
+		<li>
+			<%= link_to "Voltar", edit_admin_job_path(@job.id) %>
+		</li>
+	</ul>
+<% end %>
+
+<%= content_for :breadcrumbs do %>
+	<h2>
+		<%= link_to "Trabalhos", admin_jobs_path %>&raquo;
+		<%= link_to @job.name, edit_admin_job_path(@job.id) %>&raquo;
+		<a href="#" class="active">Images</a>
+	</h2>
+<% end %>
+
+<%= link_to "Nova imagem", new_admin_job_job_image_path(@job.id), :class => "button" %>
+
+<table class="admin_content">
+	<tr>
+		<th class="first">Imagem</th>
+		<th class="last"></th>
+	</tr>
+	<% isOdd = false %>
+	<% @job_images.each do |job_image| %>
+		<tr class="<%= isOdd ? "odd" : "" %>">
+			<td class="first"><%= image_tag job_image.url.thumb %></td>
+			<td class="last">
+				<%= link_to "Deletar", admin_job_job_image_path(job_image.job.id, job_image.id), 
+	    			:method => :delete, data: { confirm: 'Você tem certeza de que deseja deletar esta imagem?' } %>
+			</td>
+		</tr>
+	<% isOdd = !isOdd %>
+	<% end %>
+</table>
+
+
+<%= link_to "Nova imagem", new_admin_job_job_image_path(@job.id), :class => "button" %>

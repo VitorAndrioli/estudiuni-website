@@ -1,0 +1,11 @@
+<%= content_for :breadcrumbs do %>
+	<h2>
+		<%= link_to "Trabalhos", admin_jobs_path %> &raquo; 
+		<%= link_to @job.name, admin_job_path(@job.id) %> &raquo; 
+		<%= link_to "Imagens", admin_job_job_images_path(@job.id) %> &raquo; 
+		<a href="#" class="active">Nova imagem</a>
+	</h2>
+<% end %>
+
+<% @submit_text = "Salvar" %>
+<%= render "form" %>

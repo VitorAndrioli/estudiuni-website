@@ -1,0 +1,28 @@
+<%= content_for :breadcrumbs do %>
+	<h2><a href="#" class="active">Trabalhos</a></h2>
+<% end %>
+
+<%= link_to "Novo trabalho", new_admin_job_path, :class => "button" %>
+
+<table class="admin_content">
+	<tr>
+		<th class="first">Nome</th>
+		<th>Capa</th>
+		<th class="last"></th>
+	</tr>
+	<% isOdd = false %>
+	<% @jobs.each do |job| %>
+		<tr class="<%= isOdd ? "odd" : "" %>">
+			<td class="first"><%= job.name %></td>
+			<td><%= job.cover.thumb.blank? ? "" : image_tag(job.cover.small_thumb) %></td>
+			<td class="last">
+				<%= link_to "Editar", edit_admin_job_path(job.id) %>
+				<%= link_to "Deletar", admin_job_path(job.id), 
+	    			:method => :delete, data: { confirm: 'Você tem certeza de que deseja deletar este trabalho?' } %>
+			</td>		
+		</tr>
+	<% isOdd = !isOdd %>
+	<% end %>
+</table>
+
+<%= link_to "Novo trabalho", new_admin_job_path, :class => "button" %>

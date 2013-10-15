@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20131014145924) do
     t.string   "image"
     t.string   "email"
     t.string   "surname"
+    t.string   "curriculum"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "slug"
@@ -84,7 +85,7 @@ ActiveRecord::Schema.define(:version => 20131014145924) do
 
   create_table "job_images", :force => true do |t|
     t.string   "url"
-    t.integer  "work_id"
+    t.integer  "job_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

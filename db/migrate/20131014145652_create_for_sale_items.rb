@@ -4,6 +4,7 @@ class CreateForSaleItems < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :cover
+      t.integer :designer_id
 
       t.timestamps
     end

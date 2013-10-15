@@ -12,6 +12,7 @@ class CreateDesigners < ActiveRecord::Migration
       t.string :image
       t.string :email
       t.string :surname
+      t.string :curriculum
       
       t.timestamps
     end

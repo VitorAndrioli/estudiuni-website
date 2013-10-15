@@ -7,5 +7,7 @@ class ForSaleItem < ActiveRecord::Base
   translates :description, :name
   accepts_nested_attributes_for :translations
   
+  attr_accessible :name, :description, :cover, :designer_id, :translations_attributes
+  
   belongs_to :designers
 end

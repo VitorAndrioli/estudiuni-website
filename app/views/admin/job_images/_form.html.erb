@@ -1,0 +1,25 @@
+<%= form_for [:admin, @job, @job_image] do |f| %>
+	<% if @job_image.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@job_image.errors.count, "error") %> prohibited this job from being saved:</h2>
+			
+			<ul>
+				<% @job_image.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<%= f.hidden_field :job_id %>
+	
+	<div class="field">
+		<%= f.label "Imagem" %><br />
+		<%= f.file_field :url %>
+	</div>
+	
+	<div class="action">
+		<%= f.submit @submit_text %>
+	</div>
+	
+<% end %>

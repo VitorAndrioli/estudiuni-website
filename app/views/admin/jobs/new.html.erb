@@ -1,0 +1,9 @@
+<%= content_for :breadcrumbs do %>
+	<h2>
+		<%= link_to "Trabalhos", admin_jobs_path %>&raquo;
+		<a href="#" class="active">Novo trabalho</a>
+	</h2>
+<% end %>
+
+<% @submit_text = "Salvar" %>
+<%= render "form" %>

@@ -1,0 +1,16 @@
+<%= content_for :sidebar do %>
+	<ul class="sideNav">
+		<li><%= link_to "Editar Imagens", admin_job_job_images_path(@job.id) %>
+		</li>
+	</ul>
+<% end %>
+
+<%= content_for :breadcrumbs do %>
+	<h2>
+		<%= link_to "Trabalhos", admin_jobs_path %>&raquo;
+		<a href="#" class="active">Editar trabalho</a>
+	</h2>
+<% end %>
+
+<% @submit_text = "Atualizar" %>
+<%= render "form" %>
