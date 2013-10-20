@@ -1,0 +1,5 @@
+estudiuni/log/*
+estudiuni/tmp/*
+estudiuni/db/*.sqlite3
+estudiuni/public/uploads/*
+.project

@@ -19204,3 +19204,48 @@ Served asset /transdmin/content.gif - 304 Not Modified (0ms)
 
 Started GET "/assets/transdmin/button-submit.gif" for 127.0.0.1 at 2013-10-20 03:54:50 -0200
 Served asset /transdmin/button-submit.gif - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (96.2ms)[0m  [1mDROP DATABASE IF EXISTS `estudiuni`[0m
+  [1m[35m (0.1ms)[0m  CREATE DATABASE `estudiuni` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (22.2ms)[0m  [1mCREATE TABLE `designer_translations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `designer_id` int(11), `locale` varchar(255), `about` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (214.0ms)[0m  CREATE INDEX `index_designer_translations_on_designer_id` ON `designer_translations` (`designer_id`)
+  [1m[36m (75.2ms)[0m  [1mCREATE INDEX `index_designer_translations_on_locale` ON `designer_translations` (`locale`)[0m
+  [1m[35m (13.1ms)[0m  CREATE TABLE `designers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `about` text, `facebook` varchar(255), `blogger` varchar(255), `behance` varchar(255), `linkedin` varchar(255), `vimeo` varchar(255), `pinterest` varchar(255), `image` varchar(255), `email` varchar(255), `surname` varchar(255), `curriculum` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `slug` varchar(255)) ENGINE=InnoDB
+  [1m[36m (43.1ms)[0m  [1mCREATE INDEX `index_designers_on_slug` ON `designers` (`slug`)[0m
+  [1m[35m (12.8ms)[0m  CREATE TABLE `designers_jobs` (`designer_id` int(11), `job_id` int(11)) ENGINE=InnoDB
+  [1m[36m (15.9ms)[0m  [1mCREATE TABLE `for_sale_item_images` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `url` varchar(255), `for_sale_item_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (12.9ms)[0m  CREATE TABLE `for_sale_item_translations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `for_sale_item_id` int(11), `locale` varchar(255), `name` varchar(255), `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (40.3ms)[0m  [1mCREATE INDEX `index_for_sale_item_translations_on_for_sale_item_id` ON `for_sale_item_translations` (`for_sale_item_id`)[0m
+  [1m[35m (110.1ms)[0m  CREATE INDEX `index_for_sale_item_translations_on_locale` ON `for_sale_item_translations` (`locale`)
+  [1m[36m (16.4ms)[0m  [1mCREATE TABLE `for_sale_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `cover` varchar(255), `designer_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `slug` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (139.0ms)[0m  CREATE INDEX `index_for_sale_items_on_slug` ON `for_sale_items` (`slug`)
+  [1m[36m (24.3ms)[0m  [1mCREATE TABLE `friendly_id_slugs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `slug` varchar(255) NOT NULL, `sluggable_id` int(11) NOT NULL, `sluggable_type` varchar(40), `created_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (132.9ms)[0m  CREATE UNIQUE INDEX `index_friendly_id_slugs_on_slug_and_sluggable_type` ON `friendly_id_slugs` (`slug`, `sluggable_type`)
+  [1m[36m (74.5ms)[0m  [1mCREATE INDEX `index_friendly_id_slugs_on_sluggable_id` ON `friendly_id_slugs` (`sluggable_id`)[0m
+  [1m[35m (62.6ms)[0m  CREATE INDEX `index_friendly_id_slugs_on_sluggable_type` ON `friendly_id_slugs` (`sluggable_type`)
+  [1m[36m (12.0ms)[0m  [1mCREATE TABLE `job_images` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `url` varchar(255), `job_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `position` int(11)) ENGINE=InnoDB[0m
+  [1m[35m (21.1ms)[0m  CREATE TABLE `job_translations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `job_id` int(11), `locale` varchar(255), `name` varchar(255), `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (49.4ms)[0m  [1mCREATE INDEX `index_job_translations_on_job_id` ON `job_translations` (`job_id`)[0m
+  [1m[35m (40.7ms)[0m  CREATE INDEX `index_job_translations_on_locale` ON `job_translations` (`locale`)
+  [1m[36m (12.4ms)[0m  [1mCREATE TABLE `jobs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `month` int(11), `year` int(11), `description` text, `cover` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `slug` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (72.0ms)[0m  CREATE INDEX `index_jobs_on_slug` ON `jobs` (`slug`)
+  [1m[36m (28.4ms)[0m  [1mCREATE TABLE `main_translations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `main_id` int(11), `locale` varchar(255), `about` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (67.8ms)[0m  CREATE INDEX `index_main_translations_on_locale` ON `main_translations` (`locale`)
+  [1m[36m (58.2ms)[0m  [1mCREATE INDEX `index_main_translations_on_main_id` ON `main_translations` (`main_id`)[0m
+  [1m[35m (13.6ms)[0m  CREATE TABLE `mains` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `about` text, `picture` varchar(255), `email` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (15.5ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (84.9ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (1.2ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (7.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20131020053413')
+  [1m[36m (20.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20131014145652')[0m
+  [1m[35m (5.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20131008173315')
+  [1m[36m (19.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20131008174927')[0m
+  [1m[35m (7.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20131008174525')
+  [1m[36m (5.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20131008173344')[0m
+  [1m[35m (5.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20131020050220')
+  [1m[36m (4.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20131008174413')[0m
+  [1m[35m (5.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20131008173635')
+  [1m[36m (6.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20131008174141')[0m
+  [1m[35m (4.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20131014145924')
+  [1m[36m (5.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20131008173404')[0m
+  [1m[35m (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
