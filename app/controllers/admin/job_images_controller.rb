@@ -3,6 +3,7 @@ class Admin::JobImagesController < Admin::AdminController
   before_filter :authenticate
   
   def index
+    JobImage.consolidate_positions( params[:job_id] || params[:job] )
     @job = Job.find( params[:job_id] )
     @job_images = @job.job_images
   end
@@ -37,6 +38,40 @@ class Admin::JobImagesController < Admin::AdminController
     
     respond_to do |format|
       format.html { redirect_to(:action => "index", :job_id => job.id) }
+    end
+  end
+  
+  def up
+    image = JobImage.find(params[:id])
+    if image.position > 0
+      previous_images = JobImage.where("position = ? and job_id = ?", image.position - 1, image.job.id).limit(1)
+      if previous_images and previous_images.length > 0
+        previous_image = previous_images[0]
+        previous_image.position = image.position
+        image.position = image.position - 1        
+        previous_image.save
+        image.save
+      end
+    end
+    
+    respond_to do |format|
+      format.html { redirect_to(:action => "index", :job_id => image.job.id) }
+    end
+  end
+  
+  def down
+    image = JobImage.find(params[:id])
+    next_images = JobImage.where("position = ? and job_id = ?", image.position + 1, image.job.id).limit(1)
+    if next_images and next_images.length > 0
+      next_image = next_images[0]
+      next_image.position = image.position
+      image.position = image.position + 1       
+      next_image.save
+      image.save
+    end
+    
+    respond_to do |format|
+      format.html { redirect_to(:action => "index", :job_id => image.job.id) }
     end
   end
 end

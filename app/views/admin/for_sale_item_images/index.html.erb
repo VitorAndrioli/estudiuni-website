@@ -1,0 +1,43 @@
+<%= content_for :sidebar do %>
+	<ul class="sideNav">
+		<li>
+			<%= link_to "Voltar", edit_admin_for_sale_item_path(@for_sale_item.id) %>
+		</li>
+	</ul>
+<% end %>
+
+<%= content_for :breadcrumbs do %>
+	<h2>
+		<%= link_to "Trabalhos", admin_for_sale_items_path %>&raquo;
+		<%= link_to @for_sale_item.name, edit_admin_for_sale_item_path(@for_sale_item.id) %>&raquo;
+		<a href="#" class="active">Images</a>
+	</h2>
+<% end %>
+
+<%= link_to "Nova imagem", new_admin_for_sale_item_for_sale_item_image_path(@for_sale_item.id), :class => "button" %>
+
+<table class="admin_content">
+	<tr>
+		<th class="first">Imagem</th>
+		<th></th>
+		<th class="last"></th>
+	</tr>
+	<% isOdd = false %>
+	<% @for_sale_item_images.each do |for_sale_item_image| %>
+		<tr class="<%= isOdd ? "odd" : "" %>">
+			<td class="first"><%= image_tag for_sale_item_image.url.thumb %></td>
+			<td>
+				<%= link_to "Pra cima", {:action => 'up', :id => for_sale_item_image, :for_sale_item_id => for_sale_item_image.for_sale_item} %>
+				<%= link_to "Pra baixo", {:action => 'down', :id => for_sale_item_image, :for_sale_item_id => for_sale_item_image.for_sale_item} %>
+			</td>
+			<td class="last">
+				<%= link_to "Deletar", admin_for_sale_item_for_sale_item_image_path(for_sale_item_image.for_sale_item.id, for_sale_item_image.id), 
+	    			:method => :delete, data: { confirm: 'Você tem certeza de que deseja deletar esta imagem?' } %>
+			</td>
+		</tr>
+	<% isOdd = !isOdd %>
+	<% end %>
+</table>
+
+
+<%= link_to "Nova imagem", new_admin_for_sale_item_for_sale_item_image_path(@for_sale_item.id), :class => "button" %>

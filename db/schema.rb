@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131014145924) do
+ActiveRecord::Schema.define(:version => 20131020053413) do
 
   create_table "designer_translations", :force => true do |t|
     t.integer  "designer_id"
@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(:version => 20131014145924) do
     t.integer "job_id"
   end
 
+  create_table "for_sale_item_images", :force => true do |t|
+    t.string   "url"
+    t.integer  "for_sale_item_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "for_sale_item_translations", :force => true do |t|
     t.integer  "for_sale_item_id"
     t.string   "locale"
@@ -65,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20131014145924) do
     t.string   "name"
     t.text     "description"
     t.string   "cover"
+    t.integer  "designer_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "slug"
@@ -88,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20131014145924) do
     t.integer  "job_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "position"
   end
 
   create_table "job_translations", :force => true do |t|

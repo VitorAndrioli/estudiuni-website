@@ -9,5 +9,6 @@ class ForSaleItem < ActiveRecord::Base
   
   attr_accessible :name, :description, :cover, :designer_id, :translations_attributes
   
-  belongs_to :designers
+  belongs_to :designer
+  has_many :for_sale_item_images
 end

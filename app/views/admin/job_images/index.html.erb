@@ -19,12 +19,17 @@
 <table class="admin_content">
 	<tr>
 		<th class="first">Imagem</th>
+		<th></th>
 		<th class="last"></th>
 	</tr>
 	<% isOdd = false %>
 	<% @job_images.each do |job_image| %>
 		<tr class="<%= isOdd ? "odd" : "" %>">
 			<td class="first"><%= image_tag job_image.url.thumb %></td>
+			<td>
+				<%= link_to "Pra cima", {:action => 'up', :id => job_image, :job_id => job_image.job} %>
+				<%= link_to "Pra baixo", {:action => 'down', :id => job_image, :job_id => job_image.job} %>
+			</td>
 			<td class="last">
 				<%= link_to "Deletar", admin_job_job_image_path(job_image.job.id, job_image.id), 
 	    			:method => :delete, data: { confirm: 'Você tem certeza de que deseja deletar esta imagem?' } %>

@@ -1,0 +1,11 @@
+<%= content_for :breadcrumbs do %>
+	<h2>
+		<%= link_to "Trabalhos", admin_for_sale_items_path %> &raquo; 
+		<%= link_to @for_sale_item.name, admin_for_sale_item_path(@for_sale_item.id) %> &raquo; 
+		<%= link_to "Imagens", admin_for_sale_item_for_sale_item_images_path(@for_sale_item.id) %> &raquo; 
+		<a href="#" class="active">Nova imagem</a>
+	</h2>
+<% end %>
+
+<% @submit_text = "Salvar" %>
+<%= render "form" %>

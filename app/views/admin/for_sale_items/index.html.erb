@@ -1,0 +1,28 @@
+<%= content_for :breadcrumbs do %>
+	<h2><a href="#" class="active">Itens à venda</a></h2>
+<% end %>
+
+<%= link_to "Novo trabalho", new_admin_for_sale_item_path, :class => "button" %>
+
+<table class="admin_content">
+	<tr>
+		<th class="first">Nome</th>
+		<th>Capa</th>
+		<th class="last"></th>
+	</tr>
+	<% isOdd = false %>
+	<% @for_sale_items.each do |for_sale_item| %>
+		<tr class="<%= isOdd ? "odd" : "" %>">
+			<td class="first"><%= for_sale_item.name %></td>
+			<td><%= for_sale_item.cover.thumb.blank? ? "" : image_tag(for_sale_item.cover.small_thumb) %></td>
+			<td class="last">
+				<%= link_to "Editar", edit_admin_for_sale_item_path(for_sale_item.id) %>
+				<%= link_to "Deletar", admin_for_sale_item_path(for_sale_item.id), 
+	    			:method => :delete, data: { confirm: 'Você tem certeza de que deseja deletar este trabalho?' } %>
+			</td>		
+		</tr>
+	<% isOdd = !isOdd %>
+	<% end %>
+</table>
+
+<%= link_to "Novo trabalho", new_admin_for_sale_item_path, :class => "button" %>

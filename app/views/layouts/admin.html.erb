@@ -37,8 +37,8 @@
 	        <ul id="mainNav">
 	        	<li><a href="/admin/main" class="<%= controller.controller_name == "main" ? "active" : "" %>">Estudiuni</a></li>
 	        	<li><a href="/admin/designers" class="<%= controller.controller_name == "designers" ? "active" : "" %>">Designers</a></li> <!-- Use the "active" class for the active menu item  -->
-	        	<li><a href="/admin/jobs" class="<%= (controller.controller_name == "jobs" or controller.controller_name == "images") ? "active" : "" %>">Trabalhos</a></li>
-	        	<li><a href="/admin/for_sale_items" class="<%= controller.controller_name == "for_sale_items" ? "active" : "" %>">Lojinha</a></li>
+	        	<li><a href="/admin/jobs" class="<%= (controller.controller_name == "jobs" or controller.controller_name == "job_images") ? "active" : "" %>">Trabalhos</a></li>
+	        	<li><a href="/admin/for_sale_items" class="<%= (controller.controller_name == "for_sale_items" or controller.controller_name == "for_sale_item_images") ? "active" : "" %>">Lojinha</a></li>
 	        	<li class="logout"><a href="/admin/admin/logout">LOGOUT</a></li>
 	        </ul>
 	        <!-- // #end mainNav -->
