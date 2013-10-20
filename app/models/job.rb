@@ -7,7 +7,8 @@ class Job < ActiveRecord::Base
   translates :description, :name
   accepts_nested_attributes_for :translations
   
-  attr_accessible :name, :month, :year, :description, :cover, :designer_ids, :translations_attributes
+  attr_accessible :name, :month, :year, :description, :cover, :designer_ids,
+                  :featured, :translations_attributes
   
   has_and_belongs_to_many :designers
   has_many :job_images

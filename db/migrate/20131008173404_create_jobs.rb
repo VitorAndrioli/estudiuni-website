@@ -6,6 +6,7 @@ class CreateJobs < ActiveRecord::Migration
       t.integer :year
       t.text :description
       t.string :cover
+      t.boolean :featured
 
       t.timestamps
     end

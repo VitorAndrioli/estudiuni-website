@@ -48,6 +48,12 @@
 		<%= select_year(@job.year, :start_year => Time.now.year, :end_year => 2000, :field_name => "year", :prefix => :job) %>
 	</div>
 	
+	<br />
+	<div>
+		<%= f.check_box :featured %>
+		<%= f.label "Aparecer na home" %>
+		
+	</div>
 	
 	<div class="field">
 		<%= f.label "Artistas" %>
