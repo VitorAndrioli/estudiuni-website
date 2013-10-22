@@ -1,0 +1,54 @@
+ul#gallery, ul#showcase {
+	height: 424px;
+	margin-top: 47px;
+}
+
+ul#gallery {
+	width: 200px;
+	margin-left: 37px;
+	float: left;
+}
+
+ul#gallery li {
+	width: 92px;
+	height: 76px;
+	margin-bottom: 9px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+ul#gallery li.left {
+	float: left;
+}
+
+ul#gallery li.right {
+	float: right;
+}
+
+ul#showcase {
+	width: 667px;
+	overflow: hidden;
+	float: right;
+	margin-right: 36px;
+	text-align: center;
+}
+
+ul#showcase li {
+	display: none;
+}
+
+ul#showcase li div#work-data {
+	width: 100%;
+	line-height: 42px;
+	margin-top: -44px;
+	background-image: url("image_data_background.png");
+	position: relative;
+}
+
+ul#showcase li div#work-data p {
+	color: white;
+	text-align: right;
+	padding-right: 15px;
+	font-size: 13pt;
+	text-transform: uppercase;
+}

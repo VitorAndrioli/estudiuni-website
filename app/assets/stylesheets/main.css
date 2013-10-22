@@ -1,0 +1,193 @@
+@font-face {
+    font-family: 'DidactGothicMedium';
+    src: url('didactgothic.eot');
+    src: url('didactgothic.eot') format('embedded-opentype'),
+         url('didactgothic.woff') format('woff'),
+         url('didactgothic.ttf') format('truetype'),
+         url('didactgothic.svg#DidactGothicMedium') format('svg');
+}
+
+body {
+	background-color: white;
+	font-family: "DidactGothicMedium";
+}
+
+a:link, a:hover, a:visited, a:active {
+	text-decoration: none;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+#container {
+	height: auto;
+	min-height: 100%;
+	position: relative;
+}
+
+#content {
+	padding-bottom: 25px;
+	min-height: 600px;
+}
+
+div#container, header, footer {
+	max-width: 1005px;
+	margin: auto;
+}
+
+header {
+	width: 100%;
+	height: 106px;
+	font-size: 16pt;
+}
+
+header a.logo {
+	float: left;
+	width: 25.47%;
+	min-width: 155px;
+	margin-top: 23px;
+	margin-left: 1.393034826%;
+}
+
+header a.logo img {
+	width: 100%;
+}
+
+header ul#language {
+	position: absolute;
+	right: -2px;
+	top: 8px;
+}
+
+header ul#language li {
+	display: inline-block;
+	line-height: 14px;
+}
+
+header ul#language li a {
+	padding: 0 2px;
+}
+
+header ul#language li a.active-language {
+	background-color: #A9ABAC;
+	color: white;
+}
+
+header ul#main-menu {
+	float: right;
+	display: block;
+	margin-top: 48px;
+	padding-bottom: 24px;
+	border-bottom: 1px solid #9C9E9F;
+	width: 72.2388%;
+}
+
+header ul#main-menu>li {
+	display: inline-block;
+	color: #9C9E9F;
+	text-transform: uppercase;
+	height: 20px;
+	width: 19.2%;
+}
+
+header ul#main-menu li#home {
+	text-align: left;
+}
+
+header ul#main-menu li#about {
+	text-align: center;
+}
+
+header ul#main-menu li#team {
+	text-align: center;
+}
+
+header ul#main-menu li#jobs {
+	text-align: center;
+}
+
+header ul#main-menu li#contact {
+	text-align: right;
+}
+
+header ul#main-menu>li a, header ul#language li a {
+	color: #9C9E9F;
+	cursor: pointer;
+	font-size: 13pt;
+}
+
+header ul#language li a {
+	font-size: 8pt;
+}
+
+header ul#main-menu>li a:hover, header ul#main-menu li.active a, header ul#main-menu li.hover a {
+	color: #000000;
+}
+
+header ul#main-menu li ul.artists {
+	text-align: center;
+	font-size: 13pt;
+	border: solid 1px #C6C7C8;
+	margin-top: -1px;
+	position: absolute;
+	z-index: 100;
+	background-color: #FFFFFF;
+	display: none;
+}
+
+header ul#main-menu li:hover ul.artists {
+	display: block;
+}
+
+header ul#main-menu li ul.artists li {
+	padding: 0 5px;
+	margin-top: -2px;
+}
+
+header ul#main-menu li ul.artists li:hover {
+	background-color: #C6C7C8;
+}
+
+header ul#main-menu li ul.artists li:hover hr {
+	color: #C6C7C8;
+	background-color: #C6C7C8;
+}
+
+header ul#main-menu li ul.artists li:last-child hr {
+	display: none;
+}
+
+header ul#main-menu li ul.artists li a {
+	line-height: 25px;
+	display: block;
+	color: #000000;
+}
+
+header ul#main-menu li ul.artists li hr {
+	color: #C6C7C8;
+	width: 22px;
+	height: 1px;
+	margin: 0 auto;
+	display: block; 
+	border: 0; 
+    border-top: 1px solid #C6C7C8;
+}
+
+footer {
+	height: 25px;
+	margin-top: -25px;
+	position: absolute;
+	bottom: 0;
+	background-color: #FFFFFF;
+}
+
+footer p {
+	width: 100%;
+	text-align: right;
+	border-top: 2px solid #9C9E9F;
+	color: #9C9E9F;
+	font-size: 11pt;
+}
