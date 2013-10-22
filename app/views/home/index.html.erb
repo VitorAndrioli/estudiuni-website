@@ -1,0 +1,29 @@
+<%= javascript_include_tag "home" %>
+
+<ul id="gallery">
+<% left = true %>
+<% index = 1 %>
+<% @jobs.each do |job| %>
+	<li class="<%= left ? "left" : "right" %>" data-index="<%= index %>"><%= image_tag job.cover.small_thumb %></li>
+	<% left = !left %>
+	<% index += 1 %>
+<% end %>
+</ul>
+
+<ul id ="showcase">
+<% @jobs.each do |job| %>
+	<li>
+		<%= link_to (image_tag job.cover), job_path(job) %>
+		<div id="job-data">
+			<% index = 1 %>
+			<p>
+				<%= job.name %><%= job.designers.blank? ? "" : " / " %>
+				<% job.designers.each do |designer| %>
+					<%= designer.name %> <%= (index < job.designers.count) ? " / " : "" %> 
+				<% index = index+1 %> 
+				<% end %>
+			</p>
+		</div>
+	</li>
+<% end %>
+</ul>

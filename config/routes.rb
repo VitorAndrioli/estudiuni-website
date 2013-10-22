@@ -1,5 +1,5 @@
 Estudiuni2::Application.routes.draw do
-  root :to => 'admin/admin#login'
+  root :to => 'home#index'
   
   namespace :admin do
     
@@ -25,4 +25,10 @@ Estudiuni2::Application.routes.draw do
     end
     
   end
+  
+  resources :home
+  resources :jobs
+  resources :designers
+  resources :for_sale_items
+  
 end
