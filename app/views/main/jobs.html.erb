@@ -1,0 +1,30 @@
+<section id="profile">
+	<%= image_tag @estudiuni.picture, :class => "avatar" %>
+	<p><a href="mailto:<%= @estudiuni.email%>"><%= @estudiuni.email%></a></p>
+</section>
+
+<section id="artist-content" class="works">
+	<h1>Estudiuni</h1>
+	<ul id="tabs">
+		<li id="about"><a href="/about"><%= (t :about) %></a></li>
+		<li id="jobs"><a href="#"><%= (t :jobs) %></a></li>
+	</ul>
+	<ul id="artist-works">
+	<% @jobs.each do |job| %>
+		<li>
+			<%= link_to image_tag(job.cover.thumb), jobs_path(job) %>
+			<%= link_to job.name, jobs_path(job), :class => "title" %>
+		</li>
+	<% end %>		
+	</ul>
+</section>
+
+
+
+
+
+
+
+
+
+

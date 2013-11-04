@@ -19,7 +19,7 @@
 	
 	<div class="field">
 		<%= f.label "Foto" %><br />
-		<%= f.file_field :image %><br />
+		<%= f.file_field :picture %><br />
 		<br />
 		<%= @main.picture.thumb.blank? ? "" : image_tag(@main.picture.thumb) %>
 	</div>

@@ -21,7 +21,8 @@
 				</li>
 				<li id="about" class="<%= (controller.controller_name == "about" and
 									controller.action_name == "index") ? "active" : "" %>">
-					<a href="#">About</a>
+					<%= link_to (t :about),
+							{:controller => "main", :action => "about"} %>	
 				</li>
 				<li id="team" class="<%= controller.controller_name == "designers" ? "active" : "" %>">
 					<%= link_to (t :team), 
@@ -43,7 +44,7 @@
 					</a>
 					<ul class="artists">
 						<li>
-							<a href="#">Estudiuni</a>
+							<a href="/jobs">Estudiuni</a>
 							<hr />
 						</li>
 						<% Designer.all.each do |designer| %>

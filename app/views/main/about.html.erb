@@ -1,0 +1,25 @@
+<section id="profile">
+	<%= image_tag (@estudiuni.picture ? @estudiuni.picture : ""), :class => "avatar" %>
+	<p><a href="mailto:<%= @estudiuni.email %>"><%= @estudiuni.email %></a></p>
+</section>
+
+<section id="artist-content" class="about">
+	<h1>Estudiuni</h1>
+	<ul id="tabs">
+		<li id="about"><a href=""><%= (t :about) %></a></li>
+		<li id="jobs"><a href="/jobs"><%= (t :jobs) %></a></li>
+	</ul>
+	<%= raw @estudiuni.about %>
+</section>
+	
+
+
+
+
+
+
+
+
+
+
+
