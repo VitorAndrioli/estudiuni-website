@@ -1,0 +1,39 @@
+<%= stylesheet_link_tag "works" %>
+<%= javascript_include_tag "work" %>
+
+<h1><%= @job.name %></h1>
+
+<section id="images">
+	<ul id="gallery">
+		<% left = true %>
+		<% index = 1 %>
+		<% @job.job_images.each do |image| %>
+			<li class="<%= left ? "left" : "right" %>" data-index="<%= index %>"><%= image_tag image.url.thumb %></li>
+			<% left = !left %>
+			<% index += 1 %>
+		<% end %>
+		</ul>
+		
+	<div id="showcase">
+		<%= image_tag "arrow_left.png", :class => "arrow-left" %>
+		<%= image_tag "arrow_right.png", :class => "arrow-right" %>
+		
+		<ul>
+			<% @job.job_images.each do |image| %>
+				<li><%= image_tag(image.url) %></li>
+			<% end %>
+		</ul>
+	</div>
+	
+</section>
+
+<section id="profile">
+	<ul id="artists">
+	<% @job.designers.each do |designer| %>
+	<% name = designer.name + " " + designer.surname.to_s %>
+		<li><%= link_to (designer.name.to_s + " " + designer.surname.to_s), { :controller => "designers", :action => "show", :id => designer } %></li>
+	<% end %>
+	</ul>
+	<p><%= @months[@job.month-1] %> / <%= @job.year %></p>
+	<p><%= raw @job.description %></p>
+</section>

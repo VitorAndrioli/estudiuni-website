@@ -30,8 +30,15 @@ Estudiuni2::Application.routes.draw do
   get '/jobs', :controller => 'main', :action => 'jobs'
   
   resources :home, only: [:index]
+  resources :for_sale_items
+  resources :contacts, only: [:index], :path => 'contact'
+  
+  get 'designers', :controller => 'designers', :action => 'index'
+  get ':id', :controller => 'jobs', :action => 'show'
+  get ':designer_id/jobs', :controller => 'jobs', :action => 'index'
+  get ':designer_id/jobs/:id', :controller => 'jobs', :action => 'show'
+  
   resources :jobs
   resources :designers
-  resources :for_sale_items
   
 end

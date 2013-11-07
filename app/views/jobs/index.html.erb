@@ -1,0 +1,45 @@
+<%= stylesheet_link_tag "artist" %>
+
+<section id="profile">
+	<%= image_tag @designer.image, :class => "avatar" %>
+	<p><a href="mailto:<%= @designer.email%>"><%= @designer.email%></a></p>
+	<ul class="social-media">
+		<li class="social <%= @designer.facebook.blank? ? "hide" : "facebook" %>">
+			<a href="<%= @designer.facebook %>" target="_blank"></a>
+		</li>
+		<li class="social <%= @designer.behance.blank? ? "hide" : "behance" %>">
+			<a href="<%= @designer.behance %>" target="_blank"></a>
+		</li>
+		<li class="social <%= @designer.linkedin.blank? ? "hide" : "linkedin" %>">
+			<a href="<%= @designer.linkedin %>" target="_blank"></a>
+		</li>
+		<li class="social <%= @designer.vimeo.blank? ? "hide" : "vimeo" %>">
+			<a href="<%= @designer.vimeo %>" target="_blank"></a>
+		</li>
+		<li class="social <%= @designer.pinterest.blank? ? "hide" : "pinterest" %>">
+			<a href="<%= @designer.pinterest %>" target="_blank"></a>
+		</li>
+		<li class="social <%= @designer.blogger.blank? ? "hide" : "blogger" %>">
+			<a href="<%= @designer.blogger %>" target="_blank"></a>
+		</li>
+	</ul>
+</section>
+
+<section id="artist-content" class="works">
+	<h1><%= @designer.name.to_s + " " + @designer.surname.to_s %></h1>
+	<ul id="tabs">
+		<li id="about"><%= link_to (t :about).upcase, 
+				{:controller => "designers", :action => "show", :id => @designer}%></li>
+		<li id="jobs"><a href="#"><%= (t :jobs).upcase %></a></li>
+	</ul>
+	<ul id="artist-works">
+	<% @designer.jobs.order("year DESC").each do |job| %>
+		<li>
+			<%= link_to image_tag(job.cover.thumb),
+				{ :controller => "jobs", :action => "show", :id => job } %>
+			<%= link_to job.name,
+				{ :controller => "jobs", :action => "show", :id => job }, :class => "title" %>
+		</li>
+	<% end %>		
+	</ul>
+</section>

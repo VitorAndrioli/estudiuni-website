@@ -1,0 +1,48 @@
+<%= stylesheet_link_tag "artist" %>
+
+<section id="profile">
+	<%= image_tag @designer.image, :class => "avatar" %>
+	<p><a href="mailto:<%= @designer.email%>"><%= @designer.email%></a></p>
+	<ul class="social-media">
+		<li class="social <%= @designer.facebook.blank? ? "hide" : "facebook" %>">
+			<a href="<%= @designer.facebook %>" target="_blank"></a>
+		</li>
+		<li class="social <%= @designer.behance.blank? ? "hide" : "behance" %>">
+			<a href="<%= @designer.behance %>" target="_blank"></a>
+		</li>
+		<li class="social <%= @designer.linkedin.blank? ? "hide" : "linkedin" %>">
+			<a href="<%= @designer.linkedin %>" target="_blank"></a>
+		</li>
+		<li class="social <%= @designer.vimeo.blank? ? "hide" : "vimeo" %>">
+			<a href="<%= @designer.vimeo %>" target="_blank"></a>
+		</li>
+		<li class="social <%= @designer.pinterest.blank? ? "hide" : "pinterest" %>">
+			<a href="<%= @designer.pinterest %>" target="_blank"></a>
+		</li>
+		<li class="social <%= @designer.blogger.blank? ? "hide" : "blogger" %>">
+			<a href="<%= @designer.blogger %>" target="_blank"></a>
+		</li>
+	</ul>
+</section>
+
+<section id="artist-content" class="about">
+	<h1><%= @designer.name.to_s + " " + @designer.surname.to_s %></h1>
+	<ul id="tabs">
+		<li id="about"><a href="#"><%= (t :about).upcase %></a></li>
+		<li id="jobs"><%= link_to (t :jobs).upcase, 
+				{ :controller => "jobs", :action => "index", :designer_id => @designer }%></li>
+	</ul>
+	<%= raw @designer.about %>
+</section>
+	
+
+
+
+
+
+
+
+
+
+
+

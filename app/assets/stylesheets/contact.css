@@ -1,0 +1,105 @@
+h1 {
+	font-size: 27pt;
+	font-weight: normal;
+	padding-left: 285px;
+	border-bottom:  solid 16px #DADADC;
+	height: 26px;
+	margin-top: 56px;
+}
+
+ul#artists, h2 {
+	margin-left: 286px;
+}
+
+h2 {
+	font-size: 16pt;
+	font-weight: normal;
+	margin-top: 43px;
+	background-color: #DADADC;
+	display: inline-block;
+	padding: 0 8px;
+	height: 27px;
+	padding-top: 5px;
+}
+
+h2 a {
+	color: black;
+}
+
+ul#artists {
+	margin-top: 48px;
+	margin-bottom: 200px;
+}
+
+ul#artists>li {
+	margin-bottom: 31px;
+}
+
+ul#artists li h3 {
+	width: 274px;
+	border-bottom: solid 3px #A9ABAC;
+	padding-bottom: 4px;
+	margin-bottom: 17px;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+ul#artists li p {
+	width: 274px;
+	text-align: right;
+	font-size: 13pt;
+}
+
+ul#artists li p a {
+	color: black;
+}
+
+ul#artists li ul.social-media {
+	margin-left: 285px;
+	margin-top: -30px;
+}
+
+ul.social-media li {
+	display: inline-block;
+	margin-right: 3px;
+}
+
+ul.social-media li a {
+	display: block;
+	width: 29px;
+	height: 30px;
+}
+
+ul.social-media li.facebook {
+	background-image: url("icons-contact.png");
+	background-position: 0 0;
+}
+
+ul.social-media li.behance {
+	background-image: url("icons-contact.png");
+	background-position: -29px 0;
+}
+
+ul.social-media li.linkedin {
+	background-image: url("icons-contact.png");
+	background-position: -58px 0;
+}
+
+ul.social-media li.vimeo {
+	background-image: url("icons-contact.png");
+	background-position: -87px 0;
+}
+
+ul.social-media li.pinterest {
+	background-image: url("icons-contact.png");
+	background-position: -116px 0;
+}
+
+ul.social-media li.blogger {
+	background-image: url("icons-contact.png");
+	background-position: -145px 0;
+}
+
+ul.social-media li.hide {
+	display: none;
+}

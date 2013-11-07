@@ -1,0 +1,160 @@
+section#content {
+	margin-top: 64px;
+	min-height: 500px;
+}
+
+#profile {
+	text-align: left;
+	width: 230px;
+	float: left;
+}
+
+#profile p {
+	width: 100%;
+	line-height: 29px;
+	text-align: center;
+	background-color: #DADADC;
+	margin-top: 23px;
+	margin-bottom: 25px;
+}
+
+#profile p a:active, #profile p a:visited, #profile p a:link, #profile p a {
+	color: #000000;
+}
+
+ul.social-media {
+	text-align: center;	
+}
+
+ul.social-media li {
+	display: inline-block;
+	margin-right: 3px;
+}
+
+ul.social-media li a {
+	display: block;
+	width: 38px;
+	height: 38px;
+}
+
+ul.social-media li.facebook {
+	background-image: url("icons-profile.png");
+	background-position: 0 0;
+}
+
+ul.social-media li.behance {
+	background-image: url("icons-profile.png");
+	background-position: -38px 0;
+}
+
+ul.social-media li.linkedin {
+	background-image: url("icons-profile.png");
+	background-position: -76px 0;
+}
+
+ul.social-media li.vimeo {
+	background-image: url("icons-profile.png");
+	background-position: -114px 0;
+}
+
+ul.social-media li.pinterest {
+	background-image: url("icons-profile.png");
+	background-position: -152px 0;
+}
+
+ul.social-media li.blogger {
+	background-image: url("icons-profile.png");
+	background-position: -190px 0;
+}
+
+ul.social-media li.hide {
+	display: none;
+}
+
+section#artist-content {
+	width: 719px;
+	margin-left: 287px;
+	font-size: 14pt;
+	line-height: 22px;
+}
+
+section#artist-content h1 {
+	text-transform: uppercase;
+	font-size: 27pt;
+	font-weight: normal;
+	margin-bottom: 42px;
+	line-height: 23px;
+}
+
+section#artist-content.about ul#tabs {
+	border-bottom: 16px solid #DADADC;
+	margin-bottom: 24px;
+}
+
+section#artist-content.works ul#tabs {
+	border-bottom: 16px solid #9C9EA0;
+	margin-bottom: 28px;
+}
+
+section#artist-content ul#tabs li {
+	display: inline-block;
+	width: 165px;
+	line-height: 28px;
+	margin-right: 8px;
+	text-align: center;
+	font-size: 12pt;
+}
+
+section#artist-content ul#tabs li a {
+	display: block;
+}
+
+section#artist-content ul li#about {
+	background-color: #DADADC;
+}
+
+section#artist-content ul li#about a:link, section#artist-content ul li#about a:hover,
+section#artist-content ul li#about a:active, section#artist-content ul li#about a:visited {
+	color: #707173;
+}
+
+section#artist-content ul li#jobs {
+	background-color: #9C9EA0;
+}
+
+section#artist-content ul li#jobs a:link, section#artist-content ul li#jobs a:hover,
+section#artist-content ul li#jobs a:active, section#artist-content ul li#jobs a:visited {
+	color: #FFFFFF;
+}
+
+ul#artist-works {
+	margin-left: -46px;
+}
+
+ul#artist-works li {
+	display: inline-block;
+	width: 192px;
+	margin-left: 58px;
+	border: solid 1px #9C9EA0;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+ul#artist-works li a {
+	display: block;
+}
+
+ul#artist-works li a.title {
+	line-height: 24px;
+	white-space: nowrap;
+	overflow: hidden;
+	background-color: #9C9EA0;
+	padding: 0 5px;
+	margin-top: -5px;
+	font-size: 80%;
+}
+
+ul#artist-works li a:link, ul#artist-works li a:hover,
+ul#artist-works li a:visited, ul#artist-works li a:active {
+	color: #000000;
+}

@@ -1,0 +1,33 @@
+<%= stylesheet_link_tag "contact" %>
+
+<h1><%= (t :contact).upcase %></h1>
+<h2><a href="mailto:contato@estudiuni.com.br">contato@estudiuni.com.br</a></h2>
+
+<ul id="artists">
+<% @designers.each do |designer| %>
+	<li>
+		<h3><%= designer.name %></h3>
+		<p><a href="mailto:<%= designer.email%>"><%= designer.email%></a> ou</p>
+		<ul class="social-media">
+			<li class="social <%= designer.facebook.blank? ? "hide" : "facebook" %>">
+				<a href="<%= designer.facebook %>" target="_blank"></a>
+			</li>
+			<li class="social <%= designer.behance.blank? ? "hide" : "behance" %>">
+				<a href="<%= designer.behance %>" target="_blank"></a>
+			</li>
+			<li class="social <%= designer.linkedin.blank? ? "hide" : "linkedin" %>">
+				<a href="<%= designer.linkedin %>" target="_blank"></a>
+			</li>
+			<li class="social <%= designer.vimeo.blank? ? "hide" : "vimeo" %>">
+				<a href="<%= designer.vimeo %>" target="_blank"></a>
+			</li>
+			<li class="social <%= designer.pinterest.blank? ? "hide" : "pinterest" %>">
+				<a href="<%= designer.pinterest %>" target="_blank"></a>
+			</li>
+			<li class="social <%= designer.blogger.blank? ? "hide" : "blogger" %>">
+				<a href="<%= designer.blogger %>" target="_blank"></a>
+			</li>
+		</ul>
+	</li>
+<% end %>
+</ul>

@@ -48,13 +48,12 @@
 							<hr />
 						</li>
 						<% Designer.all.each do |designer| %>
-							<li><a href="/<%= designer.name %>/works"><%= designer.name %></a><hr /></li>
+							<li><a href="/<%= designer.name %>/jobs"><%= designer.name %></a><hr /></li>
 						<% end %>
 					</ul>
 				</li>
 				<li id="contact" class="<%= controller.controller_name == "contacts" ? "active" : "" %>">
-					<%= link_to (t :contact), 
-							"#" %>
+					<%= link_to (t :contact), contacts_path %>
 				</li>
 			</ul>
 		</header>

@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag "team" %>
+
+<h1>DESIGNERS</h1>
+
+<ul id="team">
+	<% @designers.each do |designer| %>
+		<li>
+			<%= link_to image_tag(designer.image.thumb), 
+			{:controller => 'designers', :action => "show", :id => designer}%>
+			<%= link_to designer.name, 
+			{:controller => 'designers', :action => "show", :id => designer}, :class => "artist-name"%>	
+		</li>
+	<% end %>
+</ul>
