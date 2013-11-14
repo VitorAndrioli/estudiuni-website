@@ -96,6 +96,11 @@ section#artist-content.works ul#tabs {
 	margin-bottom: 28px;
 }
 
+section#artist-content.shop ul#tabs {
+	border-bottom: 16px solid red;
+	margin-bottom: 24px;
+}
+
 section#artist-content ul#tabs li {
 	display: inline-block;
 	width: 165px;
@@ -125,6 +130,15 @@ section#artist-content ul li#jobs {
 section#artist-content ul li#jobs a:link, section#artist-content ul li#jobs a:hover,
 section#artist-content ul li#jobs a:active, section#artist-content ul li#jobs a:visited {
 	color: #FFFFFF;
+}
+
+section#artist-content ul li#shop {
+	background-color: red;
+}
+
+section#artist-content ul li#shop a:link, section#artist-content ul li#shop a:hover,
+section#artist-content ul li#shop a:active, section#artist-content ul li#shop a:visited {
+	color: black;
 }
 
 ul#artist-works {

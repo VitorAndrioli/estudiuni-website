@@ -31,6 +31,8 @@
 		<li id="about"><a href="#"><%= (t :about).upcase %></a></li>
 		<li id="jobs"><%= link_to (t :jobs).upcase, 
 				{ :controller => "jobs", :action => "index", :designer_id => @designer }%></li>
+		<li id="shop"><%= link_to "Shop", 
+				{ :controller => "for_sale_items", :action => "index", :designer_id => @designer }%></li>
 	</ul>
 	<%= raw @designer.about %>
 </section>

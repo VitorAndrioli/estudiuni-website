@@ -1,0 +1,35 @@
+<%= stylesheet_link_tag "works" %>
+<%= javascript_include_tag "work" %>
+
+<h1><%= @for_sale_item.name %></h1>
+
+<section id="images">
+	<ul id="gallery">
+		<% left = true %>
+		<% index = 1 %>
+		<% @for_sale_item.for_sale_item_images.each do |image| %>
+			<li class="<%= left ? "left" : "right" %>" data-index="<%= index %>"><%= image_tag image.url.thumb %></li>
+			<% left = !left %>
+			<% index += 1 %>
+		<% end %>
+		</ul>
+		
+	<div id="showcase">
+		<%= image_tag "arrow_left.png", :class => "arrow-left" %>
+		<%= image_tag "arrow_right.png", :class => "arrow-right" %>
+		
+		<ul>
+			<% @for_sale_item.for_sale_item_images.each do |image| %>
+				<li><%= image_tag(image.url) %></li>
+			<% end %>
+		</ul>
+	</div>
+	
+</section>
+
+<section id="profile">
+	<ul id="artists">
+		<li><%= link_to (@for_sale_item.designer.name.to_s + " " + @for_sale_item.designer.surname.to_s), { :controller => "designers", :action => "show", :id => @for_sale_item.designer } %></li>
+	</ul>
+	<p><%= raw @for_sale_item.description %></p>
+</section>

@@ -25,22 +25,23 @@
 	</ul>
 </section>
 
-<section id="artist-content" class="works">
+<section id="artist-content" class="shop">
 	<h1><%= @designer.name.to_s + " " + @designer.surname.to_s %></h1>
 	<ul id="tabs">
 		<li id="about"><%= link_to (t :about).upcase, 
 				{:controller => "designers", :action => "show", :id => @designer}%></li>
-		<li id="jobs"><a href="#"><%= (t :jobs).upcase %></a></li>
-		<li id="shop"><%= link_to "Shop", 
-				{:controller => "for_sale_items", :action => "index", :designer_id => @designer}%></li>
+		<li id="jobs"><%= link_to (t :jobs).upcase, 
+				{:controller => "jobs", :action => "index", :designer_id => @designer}%></li>
+		<li id="shop"><a href="#"><%= "Shop" %></a></li>
+		
 	</ul>
 	<ul id="artist-works">
-	<% @designer.jobs.order("year DESC").each do |job| %>
+	<% @designer.for_sale_items.each do |item| %>
 		<li>
-			<%= link_to image_tag(job.cover.thumb),
-				{ :controller => "jobs", :action => "show", :id => job } %>
-			<%= link_to job.name,
-				{ :controller => "jobs", :action => "show", :id => job }, :class => "title" %>
+			<%= link_to image_tag(item.cover.thumb),
+				{ :controller => "for_sale_items", :action => "show", :id => item } %>
+			<%= link_to item.name,
+				{ :controller => "for_sale_items", :action => "show", :id => item }, :class => "title" %>
 		</li>
 	<% end %>		
 	</ul>
