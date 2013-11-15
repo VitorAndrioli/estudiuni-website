@@ -32,7 +32,7 @@ class Admin::ForSaleItemsController < Admin::AdminController
 
   def update
     @for_sale_item = ForSaleItem.find( params[:id] )
-    @for_sale_item.update_attributes( params[@for_sale_item] )
+    @for_sale_item.update_attributes( params[:for_sale_item] )
     
     respond_to do |format|
       format.html { redirect_to(:action => "index") }

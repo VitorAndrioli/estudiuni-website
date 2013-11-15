@@ -1,4 +1,4 @@
-Estudiuni2::Application.routes.draw do
+Estudiuni::Application.routes.draw do
   root :to => 'home#index'
   
   namespace :admin do
@@ -33,14 +33,15 @@ Estudiuni2::Application.routes.draw do
   resources :for_sale_items
   resources :contacts, only: [:index], :path => 'contact'
   
+  get 'locales/:locale', :controller => 'locales', :action => 'set'
+  
   get 'designers', :controller => 'designers', :action => 'index'
   get ':id', :controller => 'jobs', :action => 'show'
   get ':designer_id/jobs', :controller => 'jobs', :action => 'index'
-  get ':designer_id/shop', :controller => 'for_sale_items', :action => 'index'
+  get ':designer_id/sale', :controller => 'for_sale_items', :action => 'index'
   #get ':designer_id/jobs/:id', :controller => 'jobs', :action => 'show'
   
-  get 'shop/:id', :controller => 'for_sale_items', :action => 'show'
-  get ':designer_id/shop', :controller => 'for_sale_items', :action => 'index'
+  get 'sale/:id', :controller => 'for_sale_items', :action => 'show'
   #get ':designer_id/shop/:id', :controller => 'jobs', :action => 'show'
   
   resources :jobs

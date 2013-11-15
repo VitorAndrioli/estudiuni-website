@@ -32,7 +32,7 @@
 				{:controller => "designers", :action => "show", :id => @designer}%></li>
 		<li id="jobs"><%= link_to (t :jobs).upcase, 
 				{:controller => "jobs", :action => "index", :designer_id => @designer}%></li>
-		<li id="shop"><a href="#"><%= "Shop" %></a></li>
+		<li id="shop"><a href="#"><%= (t :shop).upcase %></a></li>
 		
 	</ul>
 	<ul id="artist-works">

@@ -97,7 +97,7 @@ section#artist-content.works ul#tabs {
 }
 
 section#artist-content.shop ul#tabs {
-	border-bottom: 16px solid red;
+	border-bottom: 16px solid #707173;
 	margin-bottom: 24px;
 }
 
@@ -133,12 +133,12 @@ section#artist-content ul li#jobs a:active, section#artist-content ul li#jobs a:
 }
 
 section#artist-content ul li#shop {
-	background-color: red;
+	background-color: #707173;
 }
 
 section#artist-content ul li#shop a:link, section#artist-content ul li#shop a:hover,
 section#artist-content ul li#shop a:active, section#artist-content ul li#shop a:visited {
-	color: black;
+	color: white;
 }
 
 ul#artist-works {

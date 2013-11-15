@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Estudiuni2::Application.load_tasks
+Estudiuni::Application.load_tasks

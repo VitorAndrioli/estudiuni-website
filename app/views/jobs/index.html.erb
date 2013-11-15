@@ -31,8 +31,11 @@
 		<li id="about"><%= link_to (t :about).upcase, 
 				{:controller => "designers", :action => "show", :id => @designer}%></li>
 		<li id="jobs"><a href="#"><%= (t :jobs).upcase %></a></li>
-		<li id="shop"><%= link_to "Shop", 
-				{:controller => "for_sale_items", :action => "index", :designer_id => @designer}%></li>
+		
+		<% if @designer.for_sale_items.count > 0 %>
+			<li id="shop"><%= link_to (t :shop).upcase, 
+					{:controller => "for_sale_items", :action => "index", :designer_id => @designer}%></li>
+		<% end %>
 	</ul>
 	<ul id="artist-works">
 	<% @designer.jobs.order("year DESC").each do |job| %>
