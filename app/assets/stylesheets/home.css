@@ -37,15 +37,16 @@ ul#showcase li {
 	display: none;
 }
 
-ul#showcase li div#work-data {
+ul#showcase li div#job-data {
 	width: 100%;
 	line-height: 42px;
 	margin-top: -44px;
 	background-image: url("image_data_background.png");
 	position: relative;
+	pointer-events: none;
 }
 
-ul#showcase li div#work-data p {
+ul#showcase li div#job-data p {
 	color: white;
 	text-align: right;
 	padding-right: 15px;

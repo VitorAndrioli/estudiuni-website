@@ -36,7 +36,7 @@ Estudiuni::Application.routes.draw do
   get 'locales/:locale', :controller => 'locales', :action => 'set'
   
   get 'designers', :controller => 'designers', :action => 'index'
-  get ':id', :controller => 'jobs', :action => 'show'
+  get ':id', :controller => 'designers', :action => 'show'
   get ':designer_id/jobs', :controller => 'jobs', :action => 'index'
   get ':designer_id/sale', :controller => 'for_sale_items', :action => 'index'
   #get ':designer_id/jobs/:id', :controller => 'jobs', :action => 'show'
